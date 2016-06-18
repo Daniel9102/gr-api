@@ -37,7 +37,7 @@ module.exports = function(M,B){
                         "from gr_classify a ,gr_product b,gr_product_spec c " +
                         "where a.id = b.cid and a.status = 1 " +
                         "and b.status = 1 and a.ishomeshow = 1 and c.pid =b.id and b.minPrice=c.grprice " +
-                        "order by a.ordnum asc,b.id asc" ;
+                        "and a.status=1 order by a.ordnum asc,b.id asc" ;
                     M.adapter.query(sql, function (err, data) {
                         if (err) {
                             cb(E.WeiStore.QUERY_ERROR);
