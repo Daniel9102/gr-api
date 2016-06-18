@@ -1,6 +1,6 @@
 'use strict';
 module.exports = function(M,B) {
-    var rest = M.rest;
+    var rest = B.rest;
     return function(args){
         var act = args.action;
         delete args.action;
